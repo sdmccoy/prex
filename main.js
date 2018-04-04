@@ -41,14 +41,32 @@ const getRdmLeft = () => {
   }
 }
 
+let counter = 0
 const moveit = (e) => {
-  
   let rdmTop = getRdmTop() + 'px'
   let rdmLeft = getRdmLeft() + 'px'
 
   console.log('rdm top' , rdmTop, 'rdm right', rdmLeft)
-  e.target.style.top = rdmTop
-  e.target.style.left = rdmLeft
+  ++counter
+  console.log('coutner = ', counter)
+  if (counter === 2) {
+    console.log('break = ', )
+    e.target.style.position = 'fixed'
+    e.target.style.top = 'auto'
+    e.target.style.left = 'auto'
+    e.target.style.bottom = 0
+    e.target.style.right = 0
+    console.log('style ctr= ', e.target.style)
+    
+    counter = 0
+    
+  } else {
+    e.target.style.top = rdmTop
+    e.target.style.left = rdmLeft
+    console.log('break 2 = ', )
+    console.log('style = ', e.target.style)
+  }
+  
 }
 
 let trex = document.getElementById('trex')
