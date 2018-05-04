@@ -49,7 +49,7 @@ const moveit = (e) => {
   console.log('rdm top' , rdmTop, 'rdm right', rdmLeft)
   ++counter
   console.log('coutner = ', counter)
-  if (counter === 2) {
+  if (counter === 5) {
     console.log('break = ', )
     e.target.style.position = 'fixed'
     e.target.style.top = 'auto'
@@ -72,3 +72,6 @@ const moveit = (e) => {
 let trex = document.getElementById('trex')
 
 trex.addEventListener('mouseover', moveit)
+trex.addEventListener('mousemove', moveit)
+trex.addEventListener('click', moveit)
+trex.addEventListener('auxclick', moveit)
