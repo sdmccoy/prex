@@ -3,6 +3,11 @@
 const winWidth = window.innerWidth
 const winHeight = window.innerHeight
 
+const comicList = require('./comicList.js')
+
+console.log('cl = ', comicList )
+
+
 const getRdmTop = () => {
   let currentTop = Math.floor(trex.getBoundingClientRect().top)
   let currentBttm = Math.floor(trex.getBoundingClientRect().bottom)
@@ -50,14 +55,11 @@ const moveit = (e) => {
   ++counter
   console.log('coutner = ', counter)
   if (counter === 5) {
-    console.log('break = ', )
-    e.target.style.position = 'fixed'
-    e.target.style.top = 'auto'
-    e.target.style.left = 'auto'
-    e.target.style.bottom = 0
-    e.target.style.right = 0
-    console.log('style ctr= ', e.target.style)
-    
+    console.log('style = ', e.target.style)
+    console.log('target = ', e.target)
+    document.getElementById('trex').className = 'spinMe'
+    // make function to cycle through comics
+
     counter = 0
     
   } else {
@@ -71,7 +73,7 @@ const moveit = (e) => {
 
 let trex = document.getElementById('trex')
 
-trex.addEventListener('mouseover', moveit)
+// trex.addEventListener('mouseover', moveit)
 trex.addEventListener('mousemove', moveit)
 trex.addEventListener('click', moveit)
 trex.addEventListener('auxclick', moveit)

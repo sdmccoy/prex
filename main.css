@@ -13,3 +13,33 @@ body > * {
   position: relative;
   padding: 20px;
 }
+
+.spinMe {
+  animation-name: spin;
+  background-color: blue;
+  animation-duration: 1000ms;
+  transition-duration: 1000ms;
+  position: fixed;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  animation-timing-function: ease-out;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.allComics {
+  visibility: hidden;
+}
+
+.chosenComic {
+  visibility: visible;
+}
